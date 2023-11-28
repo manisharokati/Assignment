@@ -1,0 +1,30 @@
+npm install axios
+const axios = require('axios');
+
+async function getUsersWithPosts() {
+  try {
+
+    const usersResponse = await axios.get('https://jsonplaceholder.typicode.com/users');
+    const users = usersResponse.data;
+    const postsResponse = await axios.get('https://jsonplaceholder.typicode.com/posts');
+    const posts = postsResponse.data;
+
+    
+    const usersWithPosts = users.map(user => {
+      const userPosts = posts.filter(post => post.userId === user.id);
+      return { ...user, posts: userPosts };
+    });
+
+    return usersWithPosts;
+  } catch (error) {
+    console.error('Error fetching data:', error.message);
+    throw error;
+  }
+}
+
+getUsersWithPosts()
+  .then(usersWithPosts => {
+    console.log(usersWithPosts);
+  })
+  .catch(error => {
+  });

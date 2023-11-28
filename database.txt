@@ -1,0 +1,22 @@
+SQL (Structured Query Language) and NoSQL (Not Only SQL) are two different types of database management systems, each with their own strengths .
+SQL:SQL databases use a tabular structure (rows and columns) to store data. Each row represents a record, and each column represents a field.
+ SQL databases follow ACID (Atomicity, Consistency, Isolation, Durability) properties, ensuring data integrity in transactions.
+ SQL databases have a predefined schema, meaning the structure of the data (table, columns, data types) must be defined before inserting data.
+1.Applications requiring complex queries and transactions.
+2.Situations where data integrity and consistency are critical.
+3.Well-defined and stable data structures.
+
+Examples:
+MySQL, PostgreSQL, SQLite, Oracle, Microsoft SQL Server.
+
+NoSQL:
+NoSQL databases can handle various data models, such as document-oriented, key-value pairs, wide-column stores, and graph databases.
+NoSQL databases allow dynamic schema, enabling developers to insert data without a predefined schema.
+NoSQL databases are typically scaled horizontally, by adding more servers to the database.
+NoSQL databases often prioritize performance and scalability over strong consistency, providing eventual consistency in distributed systems.
+1.Applications with rapidly changing or evolving data models.
+2.Big data and real-time applications where horizontal scalability is crucial.
+3.Situations where flexibility in data storage and retrieval is more important than strict consistency.
+Examples:
+
+MongoDB (document-oriented), Cassandra (wide-column store), Redis (key-value store), Neo4j (graph database).

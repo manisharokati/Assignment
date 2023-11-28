@@ -1,0 +1,18 @@
+CORS, or Cross-Origin Resource Sharing, is a security feature implemented by web browsers to control how web pages in one domain can request and interact with resources from another domain. It is a security mechanism to prevent unauthorized access to resources on a different origin (domain) than the one that served the web page.
+
+When a web page from one domain makes a request to a resource (like an API) on another domain, the browser enforces the Same-Origin Policy by default, which restricts such requests. CORS is a way to relax this policy selectively, allowing cross-origin requests under certain conditions.
+
+Simple Requests:
+
+For simple HTTP requests (GET, POST, HEAD), the browser adds an "Origin" header to the request, indicating the origin of the requesting page.
+The server can respond with appropriate CORS headers, like "Access-Control-Allow-Origin," indicating which origins are allowed to access the resource.
+Preflight Requests:
+
+For more complex requests (e.g., with certain headers or methods like DELETE or PUT), the browser may send a preflight request with the HTTP method "OPTIONS" to check if the actual request is safe to send.
+The server responds to the preflight request with headers specifying which origins, methods, and headers are permitted.
+
+Handling CORS Issues:
+1.Server-Side Configuration:
+Ensure that the server is configured to include the necessary CORS headers in its responses. The key header is often ' Access-Control-Allow-Origin', which specifies which origins are allowed.
+2.Wildcard (*) Usage:
+For development or public APIs, you might use a wildcard (*) for Access-Control-Allow-Origin to allow any origin. However, this should be used cautiously in production due to security considerations.

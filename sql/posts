@@ -1,0 +1,14 @@
+SELECT
+    Post.PostID,
+    Post.Title,
+    Post.Content,
+    Post.CreatedAt AS PostCreatedAt,
+    User.UserID,
+    User.Username,
+    User.Email
+FROM
+    Post
+JOIN
+    User ON Post.UserID = User.UserID
+WHERE
+    User.UserID = [SpecifyUserID];
